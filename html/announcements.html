@@ -11,14 +11,16 @@
     <h1>Announcement</h1>
 
     <script>
+      
       (async function loadNavbar() {
         try {
-          const res = await fetch("navbar.html", { cache: "no-store" });
+          const res = await fetch("/ITSE476/html/navbar.html", { cache: "no-store" });
           if (!res.ok) throw new Error("Navbar not found: " + res.status);
           const html = await res.text();
           const container = document.getElementById("navbar-placeholder");
           container.innerHTML = html;
 
+      
           const menuBtn = document.getElementById("mobile-menu");
           const navLinks = document.getElementById("nav-links");
 

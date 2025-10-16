@@ -60,7 +60,7 @@
       
       (async function loadNavbar() {
         try {
-          const res = await fetch("html/navbar.html", { cache: "no-store" });
+          const res = await fetch("/ITSE476/html/navbar.html", { cache: "no-store" });
           if (!res.ok) throw new Error("Navbar not found: " + res.status);
           const html = await res.text();
           const container = document.getElementById("navbar-placeholder");
