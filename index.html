@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bite Finder</title>
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+      <section>
+        <h1>Welcome to Bite Finder</h1>
+        <p>
+          Bite Finder is a web application that helps you discover and explore
+          restaurants near you...
+        </p>
+        <p>
+          We are using the GENERAL PUBLIC LICENSE...
+          <a
+            href="https://www.gnu.org/licenses/gpl-3.0.html#license-text"
+            target="_blank"
+          >
+            GENERAL PUBLIC LICENSE FULL TEXT
+          </a>
+        </p>
+      </section>
+
+      <section>
+        <h3>Features</h3>
+        <ul>
+          <li>Search and discover nearby restaurants</li>
+          <li>View restaurant menus and details</li>
+          <li>Explore reviews and ratings</li>
+          <li>Save your favorite dining spots</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="highlights-container">
+          <div class="highlight-item">
+            <div class="icon-circle">🍽️</div>
+            <h2>Bite Finder Food Expo 2025</h2>
+            <p>March 8 – 10 in Manama...</p>
+            <p class="highlight-link">Join us there</p>
+          </div>
+          <div class="highlight-item">
+            <div class="icon-circle">⭐</div>
+            <h2>Our Community</h2>
+            <p>Bite Finder is more than just a restaurant app...</p>
+            <a href="#join-today" class="highlight-link">Join Us Today</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      
+      (async function loadNavbar() {
+        try {
+          const res = await fetch("html/navbar.html", { cache: "no-store" });
+          if (!res.ok) throw new Error("Navbar not found: " + res.status);
+          const html = await res.text();
+          const container = document.getElementById("navbar-placeholder");
+          container.innerHTML = html;
+
+      
+          const menuBtn = document.getElementById("mobile-menu");
+          const navLinks = document.getElementById("nav-links");
+
+          if (!menuBtn || !navLinks) return;
+
+          const toggleMenu = () => {
+            const isActive = menuBtn.classList.toggle("active");
+            navLinks.classList.toggle("active", isActive);
+            menuBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+          };
+
+          menuBtn.addEventListener("click", toggleMenu);
+
+          // close menu when a link is clicked (mobile-friendly)
+          navLinks.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => {
+              if (menuBtn.classList.contains("active")) {
+                menuBtn.classList.remove("active");
+                navLinks.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+
+          // if user resizes to desktop size, ensure the mobile state is removed
+          const onResize = () => {
+            if (window.innerWidth > 768) {
+              menuBtn.classList.remove("active");
+              navLinks.classList.remove("active");
+              menuBtn.setAttribute("aria-expanded", "false");
+            }
+          };
+          window.addEventListener("resize", onResize);
+
+          // close the menu when clicking outside (mobile)
+          document.addEventListener("click", (e) => {
+            if (
+              window.innerWidth <= 768 &&
+              menuBtn.classList.contains("active")
+            ) {
+              if (!container.contains(e.target)) {
+                menuBtn.classList.remove("active");
+                navLinks.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+              }
+            }
+          });
+        } catch (err) {
+          console.error("Failed to load navbar:", err);
+        }
+      })();
+    </script>
+  </body>
+</html>

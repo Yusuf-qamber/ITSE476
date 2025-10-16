@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <h1>Discover</h1>
+
+    <script>
+      (async function loadNavbar() {
+        try {
+          const res = await fetch("navbar.html", { cache: "no-store" });
+          if (!res.ok) throw new Error("Navbar not found: " + res.status);
+          const html = await res.text();
+          const container = document.getElementById("navbar-placeholder");
+          container.innerHTML = html;
+
+          const menuBtn = document.getElementById("mobile-menu");
+          const navLinks = document.getElementById("nav-links");
+
+          if (!menuBtn || !navLinks) return;
+
+          const toggleMenu = () => {
+            const isActive = menuBtn.classList.toggle("active");
+            navLinks.classList.toggle("active", isActive);
+            menuBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+          };
+
+          menuBtn.addEventListener("click", toggleMenu);
+
+          // close menu when a link is clicked (mobile-friendly)
+          navLinks.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => {
+              if (menuBtn.classList.contains("active")) {
+                menuBtn.classList.remove("active");
+                navLinks.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+
+          // if user resizes to desktop size, ensure the mobile state is removed
+          const onResize = () => {
+            if (window.innerWidth > 768) {
+              menuBtn.classList.remove("active");
+              navLinks.classList.remove("active");
+              menuBtn.setAttribute("aria-expanded", "false");
+            }
+          };
+          window.addEventListener("resize", onResize);
+
+          // close the menu when clicking outside (mobile)
+          document.addEventListener("click", (e) => {
+            if (
+              window.innerWidth <= 768 &&
+              menuBtn.classList.contains("active")
+            ) {
+              if (!container.contains(e.target)) {
+                menuBtn.classList.remove("active");
+                navLinks.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+              }
+            }
+          });
+        } catch (err) {
+          console.error("Failed to load navbar:", err);
+        }
+      })();
+    </script>
+  </body>
+</html>
