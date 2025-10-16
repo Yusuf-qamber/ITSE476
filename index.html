@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bite Finder</title>
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
-    <div id="navbar-placeholder"></div>
+    <nav class="navbar">
+      <div class="nav-inner">
+        <div class="logo">🍽️ Bite Finder</div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="html/announcements.html">Announcements</a></li>
+          <li><a href="html/about.html">About</a></li>
+          <li><a href="html/join.html">Join Us</a></li>
+          <li><a href="html/discover.html">Discover</a></li>
+          <li><a href="html/faq.html">FAQ</a></li>
+          <li><a href="html/docs.html">Docs</a></li>
+          <li><a href="html/download.html">Download</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <main>
       <section>
         <h1>Welcome to Bite Finder</h1>
         <p>
-          Bite Finder is a web application that helps you discover and explore
-          restaurants near you...
-        </p>
-        <p>
-          We are using the GENERAL PUBLIC LICENSE...
-          <a
-            href="https://www.gnu.org/licenses/gpl-3.0.html#license-text"
-            target="_blank"
-          >
-            GENERAL PUBLIC LICENSE FULL TEXT
-          </a>
+          Bite Finder helps you discover and explore restaurants near you.
+          Browse, search, and find your next meal in seconds.
         </p>
       </section>
 
@@ -57,67 +69,14 @@
     </main>
 
     <script>
-      
-      (async function loadNavbar() {
-        try {
-          const res = await fetch("/ITSE476/html/navbar.html", { cache: "no-store" });
-          if (!res.ok) throw new Error("Navbar not found: " + res.status);
-          const html = await res.text();
-          const container = document.getElementById("navbar-placeholder");
-          container.innerHTML = html;
 
-      
-          const menuBtn = document.getElementById("mobile-menu");
-          const navLinks = document.getElementById("nav-links");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
 
-          if (!menuBtn || !navLinks) return;
-
-          const toggleMenu = () => {
-            const isActive = menuBtn.classList.toggle("active");
-            navLinks.classList.toggle("active", isActive);
-            menuBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
-          };
-
-          menuBtn.addEventListener("click", toggleMenu);
-
-          // close menu when a link is clicked (mobile-friendly)
-          navLinks.querySelectorAll("a").forEach((a) => {
-            a.addEventListener("click", () => {
-              if (menuBtn.classList.contains("active")) {
-                menuBtn.classList.remove("active");
-                navLinks.classList.remove("active");
-                menuBtn.setAttribute("aria-expanded", "false");
-              }
-            });
-          });
-
-          // if user resizes to desktop size, ensure the mobile state is removed
-          const onResize = () => {
-            if (window.innerWidth > 768) {
-              menuBtn.classList.remove("active");
-              navLinks.classList.remove("active");
-              menuBtn.setAttribute("aria-expanded", "false");
-            }
-          };
-          window.addEventListener("resize", onResize);
-
-          // close the menu when clicking outside (mobile)
-          document.addEventListener("click", (e) => {
-            if (
-              window.innerWidth <= 768 &&
-              menuBtn.classList.contains("active")
-            ) {
-              if (!container.contains(e.target)) {
-                menuBtn.classList.remove("active");
-                navLinks.classList.remove("active");
-                menuBtn.setAttribute("aria-expanded", "false");
-              }
-            }
-          });
-        } catch (err) {
-          console.error("Failed to load navbar:", err);
-        }
-      })();
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
