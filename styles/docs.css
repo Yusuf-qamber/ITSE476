@@ -1,0 +1,115 @@
+.docs-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.docs-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.docs-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin: 0;
+  font-weight: bold;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.docs-section {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #007bff;
+  text-align: left;
+}
+
+.docs-section h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.docs-section h2::before {
+  content: "";
+}
+
+.requirements-list,
+.installation-steps {
+  list-style-type: none;
+  padding-left: 0;
+  counter-reset: step;
+}
+
+.requirements-list li,
+.installation-steps li {
+  margin: 1.5rem 0; /* increased spacing */
+  font-size: 1rem;
+  color: #444;
+  padding-left: 2.5rem;
+  position: relative;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.installation-steps li::before {
+  counter-increment: step;
+  content: counter(step) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.requirements-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+code {
+  display: inline-block;
+  background-color: #eef2ff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #d63384;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .docs-header h1 {
+    font-size: 2rem;
+  }
+
+  .docs-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .installation-steps li,
+  .requirements-list li {
+    font-size: 0.95rem;
+  }
+}

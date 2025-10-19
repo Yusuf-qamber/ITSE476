@@ -6,6 +6,7 @@
     <title>About - Bite Finder</title>
     <link rel="stylesheet" href="../styles/navbar.css" />
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/docs.css">
   </head>
   <body>
     <nav class="navbar">
@@ -22,6 +23,7 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="announcements.html" >Announcements</a></li>
           <li><a href="about.html" >About</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
           <li><a href="join.html">Join Us</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -31,10 +33,46 @@
       </div>
     </nav>
 
-    <main>
-      <h1>Doc</h1>
+<main class="docs-page">
+  <div class="docs-header">
+    <h1>Bite Finder Documentation</h1>
+  </div>
 
-    </main>
+  <div class="docs-section">
+    <h2>System Requirements</h2>
+    <ul class="requirements-list">
+      <li>React.js</li>
+      <li>Node.js</li>
+      <li>npm Library</li>
+    </ul>
+  </div>
+
+  <div class="docs-section">
+    <h2>Installation Guide</h2>
+    <p class="intro">Follow these steps to set up and contribute to the open-source Bite Finder project.</p>
+    <p>Here’s how to set up Bite Finder on your computer:</p>
+    <ol class="installation-steps">
+      <li>Fork the project from our GitHub repository.</li>
+      <li>
+        Clone it to your computer:
+        <br />
+        <code>git clone https://github.com/Yusuf-qamber/Bite-Finder.git</code>
+      </li>
+      <li>
+        Open the folder and go to either the frontend or backend:
+        <br />
+        <code>cd Bite-Finder/bite-finder-frontend</code> <p>or</p>
+        <code>cd Bite-Finder/bite-finder-backend</code>
+      </li>
+      <li>Install the needed packages: <br /><code>npm i</code></li>
+      <li>Set up your <code>.env</code> file and add it to <code>.gitignore</code></li>
+      <li>Create a new branch: <br /><code>git branch "yourBranchName"</code></li>
+      <li>Make your updates or fixes.</li>
+      <li>Submit a pull request for review.</li>
+    </ol>
+  </div>
+</main>
+
 
     <script>
       const menuToggle = document.querySelector(".menu-toggle");

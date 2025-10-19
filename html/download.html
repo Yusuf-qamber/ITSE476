@@ -6,6 +6,7 @@
     <title>About - Bite Finder</title>
     <link rel="stylesheet" href="../styles/navbar.css" />
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/downlaod.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -20,20 +21,41 @@
 
         <ul class="nav-links" id="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="announcements.html" >Announcements</a></li>
-          <li><a href="about.html" >About</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
           <li><a href="join.html">Join Us</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="docs.html">Docs</a></li>
-          <li><a href="download.html"class="active">Download</a></li>
+          <li><a href="download.html" class="active">Download</a></li>
         </ul>
       </div>
     </nav>
 
-    <main>
-      <h1>Download</h1>
-
+    <main class="download-page">
+      <div class="content-container">
+        <h1 class="download-title">Download Bite Finder</h1>
+        <p class="download-description">
+          Start your food adventure with Bite Finder, the open-source solution that helps you easily find and explore restaurants around you. Download the latest version and discover great places to eat in a fun and simple way!
+        </p>
+        <div class="button-group">
+          <button
+            class="download-button"
+            onclick="downloadFile('../assets/Bite-Finder.zip')"
+          >
+            Download Latest Version
+          </button>
+          <a
+            href="https://github.com/Yusuf-qamber/Bite-Finder"
+            class="github-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Clone GitHub Repository
+          </a>
+        </div>
+      </div>
     </main>
 
     <script>
@@ -44,6 +66,16 @@
         menuToggle.classList.toggle("active");
         navLinks.classList.toggle("active");
       });
+
+      function downloadFile(url) {
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = url;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      }
     </script>
   </body>
 </html>
