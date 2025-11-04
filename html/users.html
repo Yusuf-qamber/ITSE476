@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Bite Finder</title>
+    <title>Users - Bite Finder</title>
     <link rel="stylesheet" href="../styles/navbar.css" />
     <link rel="stylesheet" href="../styles/index.css" />
   </head>
@@ -20,29 +20,51 @@
 
         <ul class="nav-links" id="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="announcements.html" >Announcements</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
           <li><a href="users.html" class="active">Users</a></li>
-          <li><a href="about.html" >About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="conduct.html">Code of Conduct</a></li>
-          <li><a href="join.html"class="active">Join Us</a></li>
+          <li><a href="join.html">Join Us</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="docs.html">Docs</a></li>
           <li><a href="download.html">Download</a></li>
-          <li><a href="contributors.html">Contributors</a></li>
+          <li><a href="users.html" class="active">Users</a></li>
         </ul>
       </div>
     </nav>
 
     <main>
-      <h1>Join us</h1>
+      <section>
+        <h1>User Resources</h1>
+        <ul>
+          <li><a href="download.html">Download the app</a></li>
+          <li><a href="docs.html">Read the documentation</a></li>
+          <li><a href="faq.html">Frequently Asked Questions</a></li>
+        </ul>
+      </section>
 
+      <section>
+        <h2>User Announcements</h2>
+        <p>Check the latest updates and notices for users:</p>
+        <ul>
+          <li><a href="announcements.html">All announcements</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Report an Issue</h2>
+        <p>Found a bug or have a problem? Let us know:</p>
+        <ul>
+          <li><a href="https://github.com/Yusuf-qamber/Bite-Finder/issues" target="_blank" rel="noopener noreferrer">Open a GitHub issue</a></li>
+          <li><a href="mailto:support@fake.com">Email support</a></li>
+        </ul>
+      </section>
     </main>
 
     <script>
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
-
       menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
         navLinks.classList.toggle("active");
