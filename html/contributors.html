@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contributors - Bite Finder</title>
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-inner">
+        <div class="logo">🍽️ Bite Finder</div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="docs.html">Docs</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="contributors.html" class="active">Contributors</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h1>Contributors & Developers</h1>
+        <p>Everything you need to participate in the project.</p>
+      </section>
+
+      <section>
+        <h2>Message Forum</h2>
+        <ul>
+          <li><a href="https://github.com/Yusuf-qamber/ITSE476/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Developers’ Code of Conduct</h2>
+        <ul>
+          <li><a href="conduct.html">Read the Code of Conduct</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Participation Guidelines</h2>
+        <ul>
+          <li><a href="docs.html">How to set up the project</a></li>
+          <li>Use branches for changes and submit Pull Requests.</li>
+          <li>Open an Issue before large changes to discuss.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>GitHub Account</h2>
+        <ul>
+          <li><a href="https://github.com/Yusuf-qamber/ITSE476" target="_blank" rel="noopener noreferrer">Project on GitHub</a></li>
+          <li><strong>System-related info:</strong> Add diagrams, architecture notes in <code>/docs/</code>.</li>
+          <li><strong>Development tasks:</strong> Track tasks with GitHub Projects and Issues.</li>
+          <li><strong>Developed parts:</strong> Keep backend/frontend modules in separate folders with READMEs.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
