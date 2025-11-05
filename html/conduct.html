@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Bite Finder</title>
-    <link rel="stylesheet" href="../styles/navbar.css" />
-    <link rel="stylesheet" href="../styles/index.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="nav-inner">
-        <div class="logo">🍽️ Bite Finder</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code of Conduct - Bite Finder</title>
+  <link rel="stylesheet" href="../styles/navbar.css">
+  <link rel="stylesheet" href="../styles/conduct.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">🍽️ Bite Finder</div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="users.html">Users</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="conduct.html" class="active">Code of Conduct</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="contributors.html">Contributors</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <ul class="nav-links" id="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="announcements.html" >Announcements</a></li>
-          <li><a href="users.html" class="active">Users</a></li>
-          <li><a href="about.html" >About</a></li>
-          <li><a href="conduct.html"class="active">Code of Conduct</a></li>
-          <li><a href="join.html">Join Us</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="docs.html">Docs</a></li>
-          <li><a href="download.html">Download</a></li>
-          <li><a href="contributors.html">Contributors</a></li>
-        </ul>
-      </div>
-    </nav>
+  <main>
+    <section>
+      <h1>📜 Code of Conduct</h1>
+      <p>
+        At Bite Finder, we are committed to creating a welcoming, safe, and inclusive environment for everyone. All community members, contributors, and users are expected to follow this Code of Conduct.
+      </p>
+    </section>
 
-    <main>
-      <h1>Code of Conduct</h1>
+    <section>
+      <h2>1. Be Respectful</h2>
+      <p>Respect all members of the community, regardless of experience level, background, or identity.</p>
+    </section>
 
-    </main>
+    <section>
+      <h2>2. No Harassment</h2>
+      <p>Harassment, discrimination, and offensive language or behavior will not be tolerated in any form.</p>
+    </section>
 
-    <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+    <section>
+      <h2>3. Collaborate Constructively</h2>
+      <p>Offer constructive feedback and help others learn. Avoid unhelpful criticism or personal attacks.</p>
+    </section>
 
-      menuToggle.addEventListener("click", () => {
-        menuToggle.classList.toggle("active");
-        navLinks.classList.toggle("active");
-      });
-    </script>
-  </body>
+    <section>
+      <h2>4. Respect Privacy</h2>
+      <p>Do not share personal or confidential information about others without consent.</p>
+    </section>
+
+    <section>
+      <h2>5. Follow Event Guidelines</h2>
+      <p>When participating in events or discussions, follow any additional rules or guidelines provided by organizers.</p>
+    </section>
+
+    <section>
+      <p>
+        By participating in the Bite Finder community, you agree to follow this Code of Conduct. Failure to comply may result in warnings or removal from community events and platforms.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Bite Finder. we use GNU AGPL v3.0 license.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
 </html>

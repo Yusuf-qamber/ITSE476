@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Bite Finder</title>
+    <title>FAQ - Bite Finder</title>
     <link rel="stylesheet" href="../styles/navbar.css" />
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/faq.css" />
   </head>
+
   <body>
     <nav class="navbar">
       <div class="nav-inner">
@@ -20,13 +22,13 @@
 
         <ul class="nav-links" id="nav-links">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="announcements.html" >Announcements</a></li>
-          <li><a href="users.html" class="active">Users</a></li>
-          <li><a href="about.html" >About</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="conduct.html">Code of Conduct</a></li>
           <li><a href="join.html">Join Us</a></li>
           <li><a href="discover.html">Discover</a></li>
-          <li><a href="faq.html"class="active">FAQ</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
           <li><a href="docs.html">Docs</a></li>
           <li><a href="download.html">Download</a></li>
           <li><a href="contributors.html">Contributors</a></li>
@@ -35,17 +37,81 @@
     </nav>
 
     <main>
-      <h1>FQA</h1>
+      <section>
+        <h1>Frequently Asked Questions</h1>
+        <p>
+          Here are some of the most common questions people ask about
+          <strong>Bite Finder</strong>. Click on a question to view the answer.
+        </p>
 
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">🍔 What is Bite Finder?</div>
+            <div class="faq-answer">
+              Bite Finder is a web platform that helps you discover nearby
+              restaurants, cafes, and eateries based on your preferences and
+              location.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">📍 How does Bite Finder find restaurants?</div>
+            <div class="faq-answer">
+              We use location data and community recommendations to show you
+              the best-rated spots around you.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">🧩 Is Bite Finder open-source?</div>
+            <div class="faq-answer">
+              Yes! Bite Finder is proudly open-source. You can explore our
+              project, contribute, or fork it on our
+              <a href="https://github.com/yusuf-qamber/ITSE476" target="_blank"
+                >GitHub repository</a
+              >.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">💬 How can I contribute or report issues?</div>
+            <div class="faq-answer">
+              Visit the <a href="contributors.html">Contributors</a> page to get in touch with
+              our team.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">🔒 Is my data safe?</div>
+            <div class="faq-answer">
+              Absolutely. We do not share user data with third parties and
+              follow strict data protection policies.
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <footer>
+      <p>© 2025 Bite Finder. we use GNU AGPL v3.0 license.</p>
+    </footer>
+
     <script>
+      // Navbar toggle
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
 
       menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
         navLinks.classList.toggle("active");
+      });
+
+      // FAQ toggle
+      const faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
       });
     </script>
   </body>
