@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Announcements - Bite Finder</title>
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/announcements.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-inner">
+        <div class="logo">🍽️ Bite Finder</div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="announcements.html" class="active">Announcements</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="conduct.html">Code of Conduct</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="docs.html">Docs</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="contributors.html">Contributors</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h1>📢 Announcements</h1>
+        <p>Stay up-to-date with the latest releases, community news, and events from Bite Finder.</p>
+      </section>
+
+      <!-- New Release Announcement -->
+      <section>
+        <h2>🚀 Bite Finder v2 Released!</h2>
+        <p>
+          We’re excited to announce the launch of <strong>Bite Finder v2</strong> — our biggest update yet!  
+          This version introduces:
+        </p>
+        <ul class="features-list">
+          <li>🍔 Smarter restaurant search recommendations</li>
+          <li>⚡ Faster loading and improved navigation</li>
+          <li>🧭 Enhanced location-based discovery features</li>
+        </ul>
+      </section>
+
+      <!-- Upcoming Events Section -->
+      <section>
+        <h2>🎉 Upcoming Events</h2>
+        <p>
+          Join us in our community-driven events and learn more about our open-source mission.
+        </p>
+
+        <div class="highlights-container">
+          <!-- Bite Finder Food Expo 2025 -->
+          <div class="highlight-item event-card">
+            <div class="icon-circle">🍽️</div>
+            <h3>Bite Finder Food Expo 2025</h3>
+            <p>
+              A celebration of local food, technology, and community. Meet other food
+              lovers, try new restaurants, and see what Bite Finder has to offer.
+              <br /><br />
+              📅 <strong>Date:</strong> March 8–10, 2025<br />
+              📍 <strong>Location:</strong> Manama, Bahrain
+            </p>
+            <a class="highlight-link" href="join.html">Join us there →</a>
+          </div>
+
+          <!-- Bite Finder Community Meetup -->
+          <div class="highlight-item">
+            <div class="icon-circle">🍕</div>
+            <h3>Bite Finder Community Meetup</h3>
+            <p>
+              A gathering for food lovers and developers! Discover how Bite Finder
+              connects local restaurants with the tech community.
+              <br /><br />
+              📅 <strong>Date:</strong> December 12, 2025<br />
+              📍 <strong>Location:</strong> Bahrain Tech Hub<br />
+              🕒 <strong>Time:</strong> 6:00 PM – 9:00 PM
+            </p>
+            <a class="highlight-link" href="join.html">Register for the Event →</a>
+          </div>
+
+          <!-- Open Source Contribution Week -->
+          <div class="highlight-item">
+            <div class="icon-circle">💻</div>
+            <h3>Open Source Contribution Week</h3>
+            <p>
+              Be part of our global effort to enhance Bite Finder! Contribute to
+              our open-source codebase, fix bugs, or design new features.
+              <br /><br />
+              📅 <strong>Date:</strong> January 8–15, 2026<br />
+              🌐 <strong>Online Event</strong>
+            </p>
+            <a class="highlight-link" href="contributors.html">Contribute Now →</a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>💡 We’re Open Source!</h2>
+        <p>
+          Bite Finder is an <strong>open-source</strong> project — built by the community, for the community.
+          You can view, edit, or contribute to our code on
+          <a href="https://github.com/yusuf-qamber/ITSE476" target="_blank">GitHub</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Bite Finder. we use GNU AGPL v3.0 license.</p>
+    </footer>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
