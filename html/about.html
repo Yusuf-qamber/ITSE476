@@ -6,7 +6,9 @@
     <title>About - Bite Finder</title>
     <link rel="stylesheet" href="../styles/navbar.css" />
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/about.css" />
   </head>
+
   <body>
     <nav class="navbar">
       <div class="nav-inner">
@@ -33,13 +35,69 @@
     </nav>
 
     <main>
-      <h1>About</h1>
+      <section class="about-section">
+        <h1>Our Mission</h1>
+        <p>
+          <strong>Bite Finder</strong> is a free, open-source web application designed to help
+          users discover and explore restaurants. Our mission is to make dining exploration
+          easy, engaging, and accessible for everyone. Users can browse, search, and view
+          restaurant details, helping them find new and exciting dining experiences.
+        </p>
+        <p>
+          We aim to provide an intuitive and interactive platform for both food enthusiasts and
+          casual diners. By keeping Bite Finder open-source, we encourage collaboration,
+          innovation, and community-driven improvement within the world of food discovery.
+        </p>
+      </section>
+
+      <section class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <h3>Salman</h3>
+            <p>Developer</p>
+          </div>
+          <div class="team-member">
+            <h3>Yusuf</h3>
+            <p>Developer</p>
+          </div>
+          <div class="team-member">
+            <h3>Abdulla</h3>
+            <p>Developer</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="license-section">
+        <h2>License</h2>
+        <p>
+          <strong>Bite Finder</strong> is released under the
+          <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU General Public License v3.0</a>.
+          This license ensures the software remains free and open-source, allowing anyone to
+          use, modify, and distribute the code.
+        </p>
+        <ul>
+          <li>You are free to use, modify, and distribute this software.</li>
+          <li>
+            If you share modified versions, your changes must also be made available under the
+            same license.
+          </li>
+          <li>Please include a copy of the license and copyright notice with any distribution.</li>
+          <li>This software comes with no warranty, as permitted by applicable law.</li>
+        </ul>
+        <p>
+          View the full license on the
+          <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU website</a>.
+        </p>
+      </section>
     </main>
+
     <footer>
-      <p>© 2025 Bite Finder. we use GNU AGPL v3.0 license.</p>
+      <p>© 2025 Bite Finder. Released under the GNU GPL v3.0 license.</p>
     </footer>
 
     <script>
+      // Navbar toggle
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
 
